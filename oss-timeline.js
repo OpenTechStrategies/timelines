@@ -36,6 +36,10 @@ function loadWorksheetJSON(json) {
       color: undefined, 
       textColor: undefined
     });
+    /* Guessing that here is where we would examine the 'type'
+       field, see if it matches "^Policy.*", and conditionally set
+       event.icon or event.color or event.textColor if so, to display
+       Policy events differently from other events. */
     timelinerEntries.push(event);
   }
   gEventSource.addMany(timelinerEntries);
