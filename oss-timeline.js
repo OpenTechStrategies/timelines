@@ -4,8 +4,74 @@
 
 SimileAjax.History.enabled = false;
 var gEventSource;
+var POLICY_COLOR = '#cc0000';
+var PUBLICATION_COLOR = '#00cc00';
+var PROJECT_COLOR = '#0000cc';
 
-function loadWorksheetJSON(json) {
+function loadProjectsWorksheetJSON(json) {
+  var entries = json.feed.entry;
+  var timelinerEntries = [];
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+
+    // these values come from the spreadsheet
+    var projectName = entry.gsx$projectnameacronym.$t;
+    var jurisdiction = entry.gsx$jurisdictionlevel.$t;
+    var organization = entry.gsx$orgdepartment.$t;
+    var license = entry.gsx$osslicenses.$t;
+    var url = entry.gsx$url.$t;
+    var dateAdded = convertFromGDataDate(entry.gsx$dateadded.$t);
+    var releaseDate= convertFromGDataDate(entry.gsx$releasedate.$t);
+    var whatItDoes = entry.gsx$whatitdoes.$t;
+    var notes = entry.gsx$notes.$t;
+
+    // these values we set based on the spreadsheet values
+    var color = null;
+    var image = null;
+    var description = '';
+
+    if (organization) {
+       description = description + '<p><b>Released by: </b> ' + organization;
+       if (jurisdiction)
+          description = description + ' (' + jurisdiction + ')';
+       description = description + '</p>';
+    }
+
+    if (releaseDate)
+       description = description + '<p><b>Release Date</b>: ' + releaseDate + '</p>';
+
+    if (license)
+       description = description + '<p><b>License</b>: ' + license + '</p>';
+
+    if (whatItDoes)
+       description = description + '<p><b>What it does</b><br />' + whatItDoes + '</p>';
+
+    if (notes)
+       description = description + '<p><b>Notes</b><br />' + notes + '</p>';
+
+    color = PROJECT_COLOR;
+
+    var event = new Timeline.DefaultEventSource.Event({
+      text: projectName,
+      description: description,
+      instant: true,
+      start: releaseDate,
+      end: null, 
+      latestStart: null,
+      latestEnd: null, 
+      isDuration: false, 
+      image: image,
+      link: url,
+      icon: null,
+      color: color, 
+      textColor: undefined
+    });
+    timelinerEntries.push(event);
+  }
+  gEventSource.addMany(timelinerEntries);
+}
+
+function loadEventsWorksheetJSON(json) {
   var entries = json.feed.entry;
   var timelinerEntries = [];
   for (var i = 0; i < entries.length; ++i) {
@@ -16,7 +82,7 @@ function loadWorksheetJSON(json) {
      * alternative given the JSON that Google's given me. The field names 
      * ("gsx$_chk2m") come from the JSON file:
      *
-     * https://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values?alt=json-in-script&callback=loadWorksheetJSON
+     * https://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values?alt=json-in-script&callback=loadEventsWorksheetJSON
      *
      * That URL fetches sheet 2 ("/2/") of the spreadsheet ("0Ajxn0...Jb1E").
      * 
@@ -38,11 +104,11 @@ function loadWorksheetJSON(json) {
       description = '<p style="float: right;"><img src="' + image + '"></p>' + description;
 */
 
-    if (type == "Code Release") {
-       color = "#ff0000";
+    if (type.match(/Policy/i)) {
+       color = POLICY_COLOR;
     }
-    else if (type == "Publication") {
-       color = "#0000ff";
+    else if (type.match(/Publication/g)) {
+       color = PUBLICATION_COLOR;
     }
 
     var event = new Timeline.DefaultEventSource.Event({
@@ -99,30 +165,6 @@ function onLoad() {
 
   var startTime = new Date(((new Date).getTime()) * 24 * 60 * 60 *
 1000);
-/* We're going to avoid the banding for now.
-  var bandInfos = [
-    Timeline.createBandInfo({
-        eventSource:    gEventSource,
-//        date:           startTime,
-        width:          "90%", 
-        intervalUnit:   Timeline.DateTime.YEAR, 
-        intervalPixels: 150,
-        theme:          theme
-    }),
-    Timeline.createBandInfo({
-        showEventText:  true,
-        trackHeight:    0.5,
-        trackGap:       0.2,
-        eventSource:    gEventSource,
-//        date:           startTime,
-        width:          "10%", 
-        intervalUnit:   Timeline.DateTime.MONTH, 
-        intervalPixels: 300
-    })
-  ];
-//  bandInfos[1].syncWith = 0;
-//  bandInfos[1].highlight = true;
-*/
 
   var bandInfos = [
     Timeline.createBandInfo({
@@ -137,10 +179,16 @@ function onLoad() {
   
   tl = Timeline.create(document.getElementById("my-timeline"), bandInfos);
 
-  // JSON feed for the Google Spreadsheet
+  // Create a script that will feed the timeline data to our loadEventsWorksheetJSON
   var feedUrl = "http://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values";
-  feedUrl += "?alt=json-in-script&callback=loadWorksheetJSON";
+  feedUrl += "?alt=json-in-script&callback=loadEventsWorksheetJSON";
+  var scriptTag = document.createElement('script');
+  scriptTag.src = feedUrl;
+  document.body.appendChild(scriptTag);
 
+  // Create a script that will feed the code release data to our loadProjectsWorksheetJSON
+  var feedUrl = "http://spreadsheets.google.com/feeds/list/0AlXDdNQEU-8fdDI0OFJEVXRYNGhDNVRrVDhUS19LVVE/3/public/values";
+  feedUrl += "?alt=json-in-script&callback=loadProjectsWorksheetJSON";
   var scriptTag = document.createElement('script');
   scriptTag.src = feedUrl;
   document.body.appendChild(scriptTag);
