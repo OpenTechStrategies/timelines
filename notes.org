@@ -1,0 +1,66 @@
+   Oh Most Grandiose and Fragrant Emacs, please be in -*- org -*- mode!
+
+* Presentation Materials
+  - OSCON Session:
+    http://www.oscon.com/oscon2012/public/schedule/detail/24221
+  - Timeline HTML page:
+    http://atechnologyjobisnoexcuse.com/oss-timeline.html
+  - Preso spreadsheet:
+    https://docs.google.com/document/d/1m0yWgVs-RlNtfUrWZ61D2SSXvH0lpS64h52FF9_lM0U/edit
+  - Preso Google Doc (possibly to be obsoleted by this notes file):
+    https://docs.google.com/spreadsheet/ccc?key=0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E#gid=10
+
+* Other Source Material / References
+
+** "Linux Grabs Its Single Biggest Win" article
+   http://www.techrepublic.com/blog/opensource/linux-grabs-its-single-biggest-win/3690
+   Use this (gently) as an example of legacy attitude -- for example,
+   where DoD started off before the Bollinger report.
+
+** Gov't-Released OSS Software w/ Release Dates
+   https://docs.google.com/spreadsheet/ccc?key=0AjxnOozsvYvldEZncklySWgtYlYwOGp6S3hDdXVGV3c#gid=0
+
+** http://csrc.nist.gov/groups/STM/cmvp/documents/140-1/1401val2012.htm#1747
+
+   OpenSSL FIPS Object Module
+   (Software Version: 2.0)
+
+   (When built, installed, protected and initialized as assumed by the
+   Crypto Officer role and as specified in the provided Security
+   Policy. Appendix A of the provided Security Policy specifies the
+   actual distribution tar file containing the source code of this
+   module. There shall be no additions, deletions or alterations to
+   the tar file contents as used during module build. The distribution
+   tar file shall be verified as specified in Appendix A of the
+   provided Security Policy. Installation and protection shall be
+   completed as specified in Appendix A of the provided Security
+   Policy. Initialization shall be invoked as per Section 4 of the
+   provided Security Policy. Any deviation from specified
+   verification, protection, installation and initialization
+   procedures will result in a non FIPS 140-2 compliant module.)
+
+   Make sure audience understands why these rules are not bad -- tell
+   the Debian OpenSSH story.
+
+* http://www.redhat.com/solutions/industry/government/certifications.html
+* Current procurement thread w/ CFPB
+  Also: http://www.consumerfinance.gov/blog/designtechnology-fellows-changing-the-way-government-works/
+* "CAC enabled git" thread in mil-oss for OSCON talk
+* "[mil-oss] Open Source'ing utilities written internally by Government Employees" for OSCON talk.
+* [2012-06-07 1-2pm CT] David Wheeler "Lessons Learned" Gov OSS webinar
+     In mil-oss:
+
+     Subject: [mil-oss] Webinar June 7, 2-3pm Eastern Time: "Lessons Learned:
+      Roadblocks and Opportunities for Open Source Software (OSS) in U.S. Government"
+ 
+    On June 7, 2012, 2-3pm Eastern Time, I’ll be speaking as part of the
+    free webinar “Lessons Learned: Roadblocks and Opportunities for Open
+    Source Software (OSS) in U.S. Government” hosted by GovLoop.  To
+    listen in, go here:
+    
+    https://event.on24.com/eventRegistration/EventLobbyServlet?target=registration.
+    jsp&eventid=462526&sessionid=1&key=E7F3DCDCA57D4521C74872EA9D848A2C&sourcepage=register
+    
+    I’ll be speaking on some results of a survey about (US federal)
+    government & open source software.
+    Everyone is welcome!
