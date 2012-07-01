@@ -10,17 +10,40 @@ function loadWorksheetJSON(json) {
   var timelinerEntries = [];
   for (var i = 0; i < entries.length; ++i) {
     var entry = entries[i];
-// Really unhappy with how these variables are referenced, but can't see an
-// alternative given the JSON that Google's given me.
+/*
+ * Really unhappy with how these variables are referenced, but can't see an
+ * alternative given the JSON that Google's given me. The field names 
+ * ("gsx$_chk2m") come from the JSON file:
+ *
+ * https://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values?alt=json-in-script&callback=loadWorksheetJSON
+ *
+ * That URL fetches sheet 2 ("/2/") of the spreadsheet ("0Ajxn0...Jb1E").
+ * 
+ */
+
+    // these values come from the spreadsheet
     var start = convertFromGDataDate(entry.gsx$_cn6ca.$t);
     var title = entry.gsx$_cokwr.$t;
-    var description = entry.gsx$_cpzh4.$t
+    var description = entry.gsx$_cpzh4.$t;
+    var type = entry.gsx$_chk2m.$t;
+    var link = entry.gsx$_cre1l.$t;
+
+    // these values we set based on the spreadsheet values
+    var color = null;
     var image = null;
+
 /* still have to look up the image column name.
     if (image)
       description = '<p style="float: right;"><img src="' + image + '"></p>' + description;
 */
-    var link = entry.gsx$_cre1l.$t;
+
+    if (type == "Code Release") {
+       color = "#ff0000";
+    }
+    else if (type == "Publication") {
+       color = "#0000ff";
+    }
+
     var event = new Timeline.DefaultEventSource.Event({
       text: title,
       description: description,
@@ -33,7 +56,7 @@ function loadWorksheetJSON(json) {
       image: image,
       link: link,
       icon: null,
-      color: undefined, 
+      color: color, 
       textColor: undefined
     });
     /* Guessing that here is where we would examine the 'type'
