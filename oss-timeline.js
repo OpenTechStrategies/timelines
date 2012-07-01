@@ -10,17 +10,18 @@ function loadWorksheetJSON(json) {
   var timelinerEntries = [];
   for (var i = 0; i < entries.length; ++i) {
     var entry = entries[i];
-/*
- * Really unhappy with how these variables are referenced, but can't see an
- * alternative given the JSON that Google's given me. The field names 
- * ("gsx$_chk2m") come from the JSON file:
- *
- * https://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values?alt=json-in-script&callback=loadWorksheetJSON
- *
- * That URL fetches sheet 2 ("/2/") of the spreadsheet ("0Ajxn0...Jb1E").
- * 
- */
 
+    /*
+     * Really unhappy with how these variables are referenced, but can't see an
+     * alternative given the JSON that Google's given me. The field names 
+     * ("gsx$_chk2m") come from the JSON file:
+     *
+     * https://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values?alt=json-in-script&callback=loadWorksheetJSON
+     *
+     * That URL fetches sheet 2 ("/2/") of the spreadsheet ("0Ajxn0...Jb1E").
+     * 
+     */
+    
     // these values come from the spreadsheet
     var start = convertFromGDataDate(entry.gsx$_cn6ca.$t);
     var title = entry.gsx$_cokwr.$t;
