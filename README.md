@@ -1,6 +1,6 @@
 Presentation and accompanying materials for OSCON 2012 presentation
 "US Government v. Open Source: A History and Lessons Learned", with
-Gunnar Hellekson (RedHat) and Karl Fogel (Open Tech Strategies).
+Gunnar Hellekson (Red Hat) and Karl Fogel (Open Tech Strategies).
 
 See http://www.oscon.com/oscon2012/public/schedule/detail/24221.
 
@@ -19,3 +19,9 @@ you'd want the Simile Timeline widget code:
 
 which provides the "simile-ajax-api.js" and "timeline-api.js" files
 (referenced from the HTML headers), and the files + images they load.
+
+If you do host this yourself, you should note that we've included a Google
+Analytics tracker in the footer of the HTML file. That will (presumably) help
+us understand where the code is being used. If you don't like it, feel free
+to delete it!
+
