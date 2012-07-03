@@ -47,6 +47,20 @@
   Also: http://www.consumerfinance.gov/blog/designtechnology-fellows-changing-the-way-government-works/
 * "CAC enabled git" thread in mil-oss for OSCON talk
 * "[mil-oss] Open Source'ing utilities written internally by Government Employees" for OSCON talk.
+* Government Open Source Policies" report, by James Andrew Lewis
+  David Wheeler said to us (on mil-oss):
+
+  If you want to get a quick handle on open source software (OSS)
+  policies in governments worldwide, you probably should look at:
+  "Government Open Source Policies" by James Andrew Lewis, Center for
+  Strategic & International Studies:
+  http://csis.org/publication/government-open-source-policies
+  
+  The last one was April 2010, so it doesn't have the latest, and they
+  tend to focus on government-wide (so individual agencies often get
+  omitted).  Still, if you want to get an international flavor that's a
+  reasonable place to start, and you might at least cite it as a way to
+  compare US with other countries.
 * [2012-06-07 1-2pm CT] David Wheeler "Lessons Learned" Gov OSS webinar
      In mil-oss:
 
