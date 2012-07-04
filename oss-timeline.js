@@ -7,6 +7,8 @@ var gEventSource;
 var POLICY_COLOR = '#cc0000';
 var PUBLICATION_COLOR = '#00cc00';
 var PROJECT_COLOR = '#0000cc';
+var EVENT_FEED_URL = "http://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values?alt=json-in-script&callback=loadEventsWorksheetJSON";
+var PROJECT_FEED_URL = "http://spreadsheets.google.com/feeds/list/0AlXDdNQEU-8fdDI0OFJEVXRYNGhDNVRrVDhUS19LVVE/3/public/values?alt=json-in-script&callback=loadProjectsWorksheetJSON";
 
 function loadProjectsWorksheetJSON(json) {
   var entries = json.feed.entry;
@@ -180,17 +182,13 @@ function onLoad() {
   tl = Timeline.create(document.getElementById("my-timeline"), bandInfos);
 
   // Create a script that will feed the timeline data to our loadEventsWorksheetJSON
-  var feedUrl = "http://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values";
-  feedUrl += "?alt=json-in-script&callback=loadEventsWorksheetJSON";
   var scriptTag = document.createElement('script');
-  scriptTag.src = feedUrl;
+  scriptTag.src = EVENT_FEED_URL;
   document.body.appendChild(scriptTag);
 
   // Create a script that will feed the code release data to our loadProjectsWorksheetJSON
-  var feedUrl = "http://spreadsheets.google.com/feeds/list/0AlXDdNQEU-8fdDI0OFJEVXRYNGhDNVRrVDhUS19LVVE/3/public/values";
-  feedUrl += "?alt=json-in-script&callback=loadProjectsWorksheetJSON";
-  var scriptTag = document.createElement('script');
-  scriptTag.src = feedUrl;
+  scriptTag = document.createElement('script');
+  scriptTag.src = PROJECT_FEED_URL;;
   document.body.appendChild(scriptTag);
 }
 
