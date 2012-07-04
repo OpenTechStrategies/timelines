@@ -28,8 +28,9 @@ function loadProjectsWorksheetJSON(json) {
     var notes = entry.gsx$notes.$t;
 
     // these values we set based on the spreadsheet values
-    var color = null;
-    var image = null;
+    var color = PROJECT_COLOR;
+    var image = "project.png";
+    var icon = "project-icon.png";
     var description = '';
 
     if (organization) {
@@ -51,8 +52,6 @@ function loadProjectsWorksheetJSON(json) {
     if (notes)
        description = description + '<p><b>Notes</b><br />' + notes + '</p>';
 
-    color = PROJECT_COLOR;
-
     var event = new Timeline.DefaultEventSource.Event({
       text: projectName,
       description: description,
@@ -64,7 +63,7 @@ function loadProjectsWorksheetJSON(json) {
       isDuration: false, 
       image: image,
       link: url,
-      icon: null,
+      icon: icon,
       color: color, 
       textColor: undefined
     });
@@ -100,6 +99,7 @@ function loadEventsWorksheetJSON(json) {
     // these values we set based on the spreadsheet values
     var color = null;
     var image = null;
+    var icon = null;
 
 /* still have to look up the image column name.
     if (image)
@@ -108,9 +108,13 @@ function loadEventsWorksheetJSON(json) {
 
     if (type.match(/Policy/i)) {
        color = POLICY_COLOR;
+       image = "book.png";
+       icon = "book-icon.png";
     }
     else if (type.match(/Publication/g)) {
        color = PUBLICATION_COLOR;
+       image = "lightbulb.png";
+       icon = "lightbulb-icon.png";
     }
 
     var event = new Timeline.DefaultEventSource.Event({
@@ -124,14 +128,10 @@ function loadEventsWorksheetJSON(json) {
       isDuration: false, 
       image: image,
       link: link,
-      icon: null,
+      icon: icon,
       color: color, 
       textColor: undefined
     });
-    /* Guessing that here is where we would examine the 'type'
-       field, see if it matches "^Policy.*", and conditionally set
-       event.icon or event.color or event.textColor if so, to display
-       Policy events differently from other events. */
     timelinerEntries.push(event);
   }
   gEventSource.addMany(timelinerEntries);
@@ -174,7 +174,7 @@ function onLoad() {
 //        date:           startTime,
         width:          "90%", 
         intervalUnit:   Timeline.DateTime.YEAR, 
-        intervalPixels: 100,
+        intervalPixels: 200,
         theme:          theme
     })
   ];
