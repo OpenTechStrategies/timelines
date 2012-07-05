@@ -1,0 +1,148 @@
+Gunnar Hellekson <gunnar@hellekson.com>Date:   2012-07-05
+
+    added CHANGELOG
+
+Merge: c2babca 8a55299
+kfogel <kfogel@red-bean.com>Date:   2012-07-04
+
+    Merge pull request #4 from ghelleks/master
+    
+    added icons and images to event entries
+
+Merge: 028c040 b58b57b
+Gunnar Hellekson <gunnar@hellekson.com>Date:   2012-07-04
+
+    Merge branch 'master' of ssh://github.com/ghelleks/us-govt-open-source
+
+Gunnar Hellekson <gunnar@hellekson.com>Date:   2012-07-04
+
+    added icons and images for event entries
+
+Gunnar Hellekson <gunnar@hellekson.com>Date:   2012-07-04
+
+    added icons and images for event entries
+
+Merge: c8b9dc8 7a63c5e
+kfogel <kfogel@red-bean.com>Date:   2012-07-04
+
+    Merge pull request #3 from ghelleks/master
+    
+    Colophon improvements
+
+Merge: 2895329 328133d
+Gunnar Hellekson <gunnar@hellekson.com>Date:   2012-07-04
+
+    Merge branch 'master' of ssh://github.com/ghelleks/us-govt-open-source
+    
+    Conflicts:
+oss-timeline.html           
+
+Gunnar Hellekson <gunnar@hellekson.com>Date:   2012-07-04
+
+    added "Colophon" header, links to JSON data
+
+Gunnar Hellekson <gunnar@hellekson.com>Date:   2012-07-04
+
+    declare feed data URLs as pseudo-constants
+
+Karl Fogel <kfogel@red-bean.com>Date:   2012-07-03
+
+    Add another reference recommended by David Wheeler.
+
+Merge: 911d546 328133d
+kfogel <kfogel@red-bean.com>Date:   2012-07-02
+
+    Merge pull request #2 from ghelleks/master
+    
+    added Google Analytics warning, link to GitHub
+
+Merge: a764d22 911d546
+Gunnar Hellekson <gunnar.hellekson@gmail.com>Date:   2012-07-01
+
+    Merge https://github.com/OpenTechStrategies/us-govt-open-source
+
+Karl Fogel <kfogel@red-bean.com>Date:   2012-07-01
+
+    Add color legend, and add an anchored link for the suggestion form.  Specify in page_title that it's U.S. government.
+
+Gunnar Hellekson <gunnar.hellekson@gmail.com>Date:   2012-07-01
+
+    added link to github
+
+Gunnar Hellekson <gunnar.hellekson@gmail.com>Date:   2012-07-01
+
+    added Google Analytics warning, fixed Red Hat spelling
+
+Gunnar Hellekson <gunnar.hellekson@gmail.com>Date:   2012-07-01
+
+    added support for Goodwin's "Gov't OSS Projects" spreadsheet, parameterized colors for entry types
+
+Gunnar Hellekson <gunnar.hellekson@gmail.com>Date:   2012-07-01
+
+    made links to atjine timeline.js more explicit for portability
+
+Gunnar Hellekson <gunnar.hellekson@gmail.com>Date:   2012-07-01
+
+    oss-timeline.js must now be in same directory as the html file
+
+Gunnar Hellekson <gunnar@hellekson.com>Date:   2012-07-01
+
+    whitespace fix
+
+Gunnar Hellekson <gunnar.hellekson@gmail.com>Date:   2012-07-01
+
+    added better description of how we fetch and use JSON, now support for event types and color Code Release and Publication types
+
+Karl Fogel <kfogel@red-bean.com>Date:   2012-07-01
+
+    Add a plaintext notes file for references, ideas, etc.  Continue work on presentation.
+
+Karl Fogel <kfogel@red-bean.com>Date:   2012-07-01
+
+    Back up latest version of timeline spreadsheet.
+
+Karl Fogel <kfogel@red-bean.com>Date:   2012-06-30
+
+    Update README for recent changes.
+
+Karl Fogel <kfogel@red-bean.com>Date:   2012-06-30
+
+    Add some slides.
+
+Karl Fogel <kfogel@red-bean.com>Date:   2012-06-29
+
+    Start template for ODP presentation.
+
+Karl Fogel <kfogel@red-bean.com>Date:   2012-06-28
+
+    * oss-timeline.js (loadWorksheetJSON): Add a comment about where to
+      add conditional code to visually distinguish Policy events.
+
+Karl Fogel <kfogel@red-bean.com>Date:   2012-06-28
+
+    Update backup of timeline spreadsheet, to include latest CFPB news.
+
+Karl Fogel <kfogel@red-bean.com>Date:   2012-06-28
+
+    Improve Markdown formatting in README.md.
+
+Karl Fogel <kfogel@red-bean.com>Date:   2012-06-28
+
+    Add the actual content, except the Simile Timeline code, which is a
+    third-party library.  Update README.md accordingly.
+
+Karl Fogel <kfogel@red-bean.com>Date:   2012-06-28
+
+    Switch to CC-BY-SA 3.0, to match license on Gunnar's site.
+
+Karl Fogel <kfogel@red-bean.com>Date:   2012-06-25
+
+    Add a CC-BY 3.0 copyright notice.
+
+Karl Fogel <kfogel@red-bean.com>Date:   2012-06-25
+
+    Minor formatting fix to README.md.
+
+kfogel <kfogel@red-bean.com>Date:   2012-06-25
+
+    Initial commit
