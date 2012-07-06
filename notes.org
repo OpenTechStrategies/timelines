@@ -1,5 +1,8 @@
    Oh Most Grandiose and Fragrant Emacs, please be in -*- org -*- mode!
 
+#+STARTUP: showeverything
+#+TAGS: KARL(k) GUNNAR(g)
+
 * Presentation Materials
   - OSCON Session:
     http://www.oscon.com/oscon2012/public/schedule/detail/24221
