@@ -12,6 +12,101 @@
     https://docs.google.com/document/d/1m0yWgVs-RlNtfUrWZ61D2SSXvH0lpS64h52FF9_lM0U/edit
   - Preso Google Doc (possibly to be obsoleted by this notes file):
     https://docs.google.com/spreadsheet/ccc?key=0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E#gid=10
+  - History of Open Source in Government
+    http://opensource.com/government/12/5/history-open-source-government
+    http://atechnologyjobisnoexcuse.com/2012/04/history-of-open-source-in-government/
+
+* Policy Dependency Analysis                                           :KARL:
+
+  Question: What percentage of “default open” or “contribution”
+            policies are preceded by an “OSS is commercial” policy?
+
+  (plus anything else interesting we find in looking at policy ordering)
+
+  (Why can't we sort by date in the timeline spreadsheet?)
+
+  <<< in progress, feel free to ignore below for now >>>
+
+  Every "PATTERN" noted below is tentative -- they are not
+  conclusions yet, they are things to be looked at.
+
+  [2003-05-28] Stenbit memo (use/make)
+               http://www.terrybollinger.com/stenbitmemo/stenbitmemo_png/index.html
+
+  [2004-07-01] OMB memo M-04-16 (use)
+               http://www.whitehouse.gov/omb/memoranda_fy04_m04-16
+               Similar to Stenbit in tone & emphasis.
+
+  [2007-06-05] "Department Of The Navy Open Source Software Guidance"
+               Navy CIO Robert Carey's June 2007 memo
+               http://www.doncio.navy.mil/Download.aspx?AttachID=261
+               States OSS can be considered COTS when it meets the
+               definition (which is sort of tautological), then gives
+               the definition of COTS, and defines OSS, citing OSI.
+
+  [2009-09-30] Portland, OR Open Source policy (use)
+               Specific about favoring open source in acquisition.
+               Uses "commercial" for "proprietary", but whatever.
+               PATTERN: Terminology tends to be more consistent, and
+               generally more correct, among the federal memos?  I
+               think this may be true; it may also be unimportant.
+
+  [2009-10-16] DOD "Open Source Memo" (use)
+               http://dodcio.defense.gov/Portals/0/Documents/OSSFAQ/2009OSS.pdf
+               Reiterates that OSS is COTS, and this time actively
+               encourages consideration of open source.
+
+  [2009-12-08] Open Government Directive
+               http://mil-oss.org/resources/us-omb_open-government-directive_m10-06.pdf
+
+               Really a transparency and open data policy. It does not
+               mention "open source", nor even "software" nor
+               "free". But it does define a culture of permissionless
+               data sharing and of establishing feedback loops both
+               upward
+
+               PATTERN: The closer a policy is to implementation
+               level, the more likely it is to be specific in what it
+               says about open source.  What this means, then, is if
+               you see a grand pronouncement from very high up (e.g.,
+               the WH) about open source, that may be less effective
+               than the high-middle layer memos that are high enough
+               to be obeyed, but low enough to say something specific.
+
+  [2010-01-07] CA open source policy from CIO Teri Takai (use)
+               http://www.cio.ca.gov/Government/IT_Policy/pdf/IT_Policy_Letter_10-01_Open_Source_Software.pdf
+               Very clear, unambiguous reminder that OSS is to be
+               considered. This policy even includes the complete Open
+               Source Definition from the OSI.
+               
+  [2010-06-28] OMB Technology Neutrality memo (use)
+
+  [2010-12-01] SF policy mandating evaluation (use).
+               http://govfresh.com/2010/01/san-francisco-releases-new-software-evaluation-policy/
+               Policy mandating evaluation of open source in software
+               procurement for purchases over $100,000. A little bit
+               someone's first trip to the open source store: OSS is
+               contrasted with "commercial" software, and is defined
+               thusly: "Open source software means that the underlying
+               source code is not copyrighted and therefore available
+               free of charge to read, modify, and build upon."
+
+  [2011-10-31] DISA AppDev guidelines update (use, borders on make)
+
+               The Defense Information Systems Agency updates its
+               guidelines for application development to resolve
+               ambiguities and misunderstandings, making it much
+               easier to use open source in the DOD. Although the
+               document being clarified, the AppDev STIG, is about
+               both use and development, this clarification appears to
+               only cover use (acquisition).
+
+  [2012-01-18] NH OSS / open data policy (use/?)
+               http://www.gencourt.state.nh.us/legislation/2012/HB0418.html
+
+  [2012-04-06] CFPB open source policy (use, make)
+  [2012-06-21] CFPB design/tech fellowships (use, make)
+
 
 * Other Source Material / References
 
