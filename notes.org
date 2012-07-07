@@ -16,14 +16,32 @@
     http://opensource.com/government/12/5/history-open-source-government
     http://atechnologyjobisnoexcuse.com/2012/04/history-of-open-source-in-government/
 
+* Tasks
+** TODO Gunnar to review pending submissions in timeline spreadsheet, and
+   move code release items over to the Scott Goodwin spreadsheet.
+** TODO Karl to look into citations from policies to articles.
+** TODO Gunnar to look at Fedora contributor agreements
+   See if there's any trend regarding receipt from .mil and .gov people.
+** TODO Gunnar to add Transparency Camp as an event
+** TODO Gunnar to make a list of the really important events/policies,
+   just for the purposes of this talk, not as part of the timeline data.
+** TODO Karl to expand "Projects" and "Psychology" notes in slides
+   List out all the talking points, then go over them with Gunnar.
+** TODO Karl to go through the "Policy Dependency Analysis" notes below,
+   and move any patterns worth talking about into the slide notes.
+
 * Policy Dependency Analysis                                           :KARL:
 
   Question: What percentage of “default open” or “contribution”
             policies are preceded by an “OSS is commercial” policy?
 
-  (plus anything else interesting we find in looking at policy ordering)
+            Plus anything else interesting we find in looking at
+            policy ordering...
 
-  (Why can't we sort by date in the timeline spreadsheet?)
+  Answer:   Sample too small to talk about "percentages".  We'll have
+            to address this by talking about a few specific cases.
+
+  New Question: Why can't we sort by date in the timeline spreadsheet?
 
   <<< in progress, feel free to ignore below for now >>>
 
