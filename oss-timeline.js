@@ -169,16 +169,36 @@ function onLoad() {
 1000);
 
   var bandInfos = [
-    Timeline.createBandInfo({
+    Timeline.createHotZoneBandInfo({
+        zones: [
+            {   start:    "Jan 01 2009 00:00:00 GMT-0500",
+                end:      "Jan 01 2013 00:00:00 GMT-0500",
+                magnify:  5,
+                unit:     Timeline.DateTime.MONTH
+            },
+        ],
         eventSource:    gEventSource,
-//        date:           startTime,
+        start:          "Jan 01 1978 00:00:00 GMT-0500",
         width:          "90%", 
         intervalUnit:   Timeline.DateTime.YEAR, 
-        intervalPixels: 200,
+        intervalPixels: 100,
+        theme:          theme
+    }),
+    Timeline.createBandInfo({
+        overview:       true,
+        eventSource:    gEventSource,
+        start:          "Jan 01 1978 00:00:00 GMT-0500",
+        width:          "10%", 
+        intervalUnit:   Timeline.DateTime.YEAR, 
+        intervalPixels: 100,
+        trackHeight:    0.5,
+        trackGap:       0.2,
         theme:          theme
     })
   ];
-  
+  bandInfos[1].syncWith = 0;
+  bandInfos[1].highlight = true;
+
   tl = Timeline.create(document.getElementById("my-timeline"), bandInfos);
 
   // Create a script that will feed the timeline data to our loadEventsWorksheetJSON
