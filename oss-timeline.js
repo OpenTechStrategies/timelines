@@ -34,6 +34,7 @@ function loadProjectsWorksheetJSON(json) {
     var description = '';
 
     if (organization) {
+       projectName = projectName + ' (' + organization + ')';
        description = description + '<p><b>Released by: </b> ' + organization;
        if (jurisdiction)
           description = description + ' (' + jurisdiction + ')';
