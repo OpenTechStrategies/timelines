@@ -11,9 +11,8 @@ Materials:
     us-govt-open-source.odp  -- Presentation slides.
     archive/                 -- Backups of some source materials.
 
-To host the timeline (not that you really need to, since it's alraedy
-online at http://atechnologyjobisnoexcuse.com/oss-timeline.html),
-you'd want the Simile Timeline widget code:
+To host the timeline (not that you really need to, since it's already
+online at http://gov-oss.org), you'd want the Simile Timeline widget code:
 
     http://www.simile-widgets.org/timeline/
 
