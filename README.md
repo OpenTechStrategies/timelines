@@ -7,9 +7,9 @@ See http://www.oscon.com/oscon2012/public/schedule/detail/24221.
 Materials:
 
     oss-timeline.html        -- The timeline page one browses to.
-    oss-timeline.ods         -- Backup of timeline spreadsheet (bit.ly/LH6ShG)
     oss-timeline.js          -- Custom JavaScript for timeline.
     us-govt-open-source.odp  -- Presentation slides.
+    archive/                 -- Backups of some source materials.
 
 To host the timeline (not that you really need to, since it's alraedy
 online at http://atechnologyjobisnoexcuse.com/oss-timeline.html),
