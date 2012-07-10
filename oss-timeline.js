@@ -105,22 +105,22 @@ function loadEventsWorksheetJSON(json) {
     var icon = null;
 
     // Now determine how the event will appear
-    if (status.match(/Highlight/i)) {
-       classname = 'highlight';
-       image = "highlight.png";
-       icon = "highlight-icon.png";
-    }
-    else if (type.match(/Policy/i)) {
-       classname = 'policy';
+    if (type.match(/Policy/i)) {
+       classname = classname + ' policy';
        image = "book.png";
        icon = "book-icon.png";
     }
     else if (type.match(/Publication/g)) {
-       classname = 'publication';
+       classname = classname + ' publication';
        image = "lightbulb.png";
        icon = "lightbulb-icon.png";
     }
 
+    if (status.match(/Highlight/i)) {
+       classname = classname + ' highlight';
+       image = "highlight.png";
+       icon = "highlight-icon.png";
+    }
 
     var event = new Timeline.DefaultEventSource.Event({
       text: title,
