@@ -19,7 +19,32 @@
 * Tasks
 ** TODO Gunnar to review pending submissions in timeline spreadsheet, and
    move code release items over to the Scott Goodwin spreadsheet.
-** TODO Karl to look into citations from policies to articles.
+** DONE Karl to look into citations from policies to articles.
+   - Stenbit 2003: No formal citations (it's only a 2-page memo), so
+     we have to go on background knowledge.  What do we know about
+     Stenbit's inspirations?
+   - M-04-16: Likewise, no citations
+   - DON CIO (Carey) 2007: Citations are mainly FAR.
+     Btw, memo states that there are some misconceptions re COTS and
+     GOTS.  "DON commands will treat OSS as COTS when it meets the
+     definition of a commercial item, per enclosure (1)."  Seems
+     tautological; compare with earlier / later memos.
+   - DOD 2009: cites Stenbit 2003.  Clear definition of OSS.  Directs
+     further questions to Dan Risacher.  Says further clarifications
+     will be posted at http://www.defenselink.mil/cio-nii/cio/oss
+     Citations are all to other DOD/DFARS and FAR documents.
+     However, some pages/points from this memo should be put on slides
+     -- they're really instructive, starting at Attachment 2.
+   - AppSTIG 2011: Cites DOD 2009, and in fact says it was updated
+     specifically to match DOD 2009 better.
+     http://iase.disa.mil/stigs/app_security/app_sec/app_sec.html
+     (note you have to unzip it)
+   - CFPB 2012: Cites DOD 2009
+*** Observation:
+    The language in the DoD memos is actually kind of similar to the
+    extremely direct language used for technical communications in
+    many OSS communities.  Reading it is a trip, because it's a
+    familiar mode in an unfamiliar place.
 ** TODO Gunnar to look at Fedora contributor agreements
    See if there's any trend regarding receipt from .mil and .gov people.
 ** TODO Gunnar to add Transparency Camp as an event
