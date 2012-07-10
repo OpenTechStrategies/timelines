@@ -4,9 +4,6 @@
 
 SimileAjax.History.enabled = false;
 var gEventSource;
-var POLICY_COLOR = '#cc0000';
-var PUBLICATION_COLOR = '#00cc00';
-var PROJECT_COLOR = '#0000cc';
 var EVENT_FEED_URL = "http://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values?alt=json-in-script&callback=loadEventsWorksheetJSON";
 var PROJECT_FEED_URL = "http://spreadsheets.google.com/feeds/list/0AlXDdNQEU-8fdDI0OFJEVXRYNGhDNVRrVDhUS19LVVE/3/public/values?alt=json-in-script&callback=loadProjectsWorksheetJSON";
 
@@ -28,10 +25,12 @@ function loadProjectsWorksheetJSON(json) {
     var notes = entry.gsx$notes.$t;
 
     // these values we set based on the spreadsheet values
-    var color = PROJECT_COLOR;
+    var color = null;
     var image = "project.png";
     var icon = "project-icon.png";
+    var classname = 'project';
     var description = '';
+
 
     if (organization) {
        projectName = projectName + ' (' + organization + ')';
@@ -56,6 +55,7 @@ function loadProjectsWorksheetJSON(json) {
     var event = new Timeline.DefaultEventSource.Event({
       text: projectName,
       description: description,
+      classname: classname,
       instant: true,
       start: releaseDate,
       end: null, 
@@ -96,31 +96,36 @@ function loadEventsWorksheetJSON(json) {
     var description = entry.gsx$_cpzh4.$t;
     var type = entry.gsx$_chk2m.$t;
     var link = entry.gsx$_cre1l.$t;
+    var status = entry.gsx$_ckd7g.$t;
 
     // these values we set based on the spreadsheet values
+    var classname = null;
     var color = null;
     var image = null;
     var icon = null;
 
-/* still have to look up the image column name.
-    if (image)
-      description = '<p style="float: right;"><img src="' + image + '"></p>' + description;
-*/
-
-    if (type.match(/Policy/i)) {
-       color = POLICY_COLOR;
+    // Now determine how the event will appear
+    if (status.match(/Highlight/i)) {
+       classname = 'highlight';
+       image = "highlight.png";
+       icon = "highlight-icon.png";
+    }
+    else if (type.match(/Policy/i)) {
+       classname = 'policy';
        image = "book.png";
        icon = "book-icon.png";
     }
     else if (type.match(/Publication/g)) {
-       color = PUBLICATION_COLOR;
+       classname = 'publication';
        image = "lightbulb.png";
        icon = "lightbulb-icon.png";
     }
 
+
     var event = new Timeline.DefaultEventSource.Event({
       text: title,
       description: description,
+      classname: classname,
       instant: true,
       start: start,
       end: null, 

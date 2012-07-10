@@ -1,0 +1,32 @@
+body {
+   font-family: Liberation Sans, Arial, Helvetica, sans-serif;
+   font-size: 14px;
+}
+
+.highlight {
+   /* dark red */
+   color: #993300;
+   font-style: bold;
+   font-size: medium;
+}
+
+.policy {
+   /* dark blue */
+   color: #0066CC;
+}
+
+.project {
+   /* gray */
+   color: #a0a0a0;
+}
+
+.event {
+   /* black */
+   color: black; 
+}
+
+.publication {
+   /* green */
+   color: green;
+}
+
