@@ -17,7 +17,7 @@
     http://atechnologyjobisnoexcuse.com/2012/04/history-of-open-source-in-government/
 
 * Tasks
-** TODO Gunnar to review pending submissions in timeline spreadsheet, and
+** DONE Gunnar to review pending submissions in timeline spreadsheet, and
    move code release items over to the Scott Goodwin spreadsheet.
 ** DONE Karl to look into citations from policies to articles.
    - Stenbit 2003: No formal citations (it's only a 2-page memo), so
@@ -47,8 +47,8 @@
     familiar mode in an unfamiliar place.
 ** TODO Gunnar to look at Fedora contributor agreements
    See if there's any trend regarding receipt from .mil and .gov people.
-** TODO Gunnar to add Transparency Camp as an event
-** TODO Gunnar to make a list of the really important events/policies,
+** DONE Gunnar to add Transparency Camp as an event
+** DONE Gunnar to make a list of the really important events/policies,
    just for the purposes of this talk, not as part of the timeline data.
 ** TODO Karl to expand "Projects" and "Psychology" notes in slides
    List out all the talking points, then go over them with Gunnar.
