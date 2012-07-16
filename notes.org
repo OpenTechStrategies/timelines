@@ -16,13 +16,33 @@
     http://opensource.com/government/12/5/history-open-source-government
     http://atechnologyjobisnoexcuse.com/2012/04/history-of-open-source-in-government/
 
+(these are just observations which should be appropriately filed)
+
+What we didn't expect.
+Almost no written arguments opposing open source.
+
+DOD policy had more apparent gravity than OMB policy, despite having a
+smaller audience.
+
+The folks who started the fight didn't end it.
+No discussion of mandates, anywhere. Remarkable restraint!
+
+What we should have expected.
+A few key people keep showing up.
+
+The mid-2008 OSS Census declares that gov't is the largest user of
+OSS, just four years after the big policies were released. DOD policy
+probbly ratified what was already happening. Why else would they write
+a policy?
+
+
 * Tasks
-** DONE Gunnar to review pending submissions in timeline spreadsheet, and
-   move code release items over to the Scott Goodwin spreadsheet.
-** DONE Karl to look into citations from policies to articles.
+** TODO Karl to transfer these policy citations observations to a diagram
+   and other slides:
    - Stenbit 2003: No formal citations (it's only a 2-page memo), so
      we have to go on background knowledge.  What do we know about
      Stenbit's inspirations?
+     We know that MITRE study was an inspiration for this.
    - M-04-16: Likewise, no citations
    - DON CIO (Carey) 2007: Citations are mainly FAR.
      Btw, memo states that there are some misconceptions re COTS and
@@ -45,11 +65,10 @@
     extremely direct language used for technical communications in
     many OSS communities.  Reading it is a trip, because it's a
     familiar mode in an unfamiliar place.
-** TODO Gunnar to look at Fedora contributor agreements
+** STARTED Gunnar to look at Fedora contributor agreements
    See if there's any trend regarding receipt from .mil and .gov people.
-** DONE Gunnar to add Transparency Camp as an event
-** DONE Gunnar to make a list of the really important events/policies,
-   just for the purposes of this talk, not as part of the timeline data.
+   Gunnar has asked Robyn for help; she's making sure it's okay
+   w.r.t. privacy policies and will get back to Gunnar.
 ** TODO Karl to expand "Projects" and "Psychology" notes in slides
    List out all the talking points, then go over them with Gunnar.
 ** TODO Karl to go through the "Policy Dependency Analysis" notes below,

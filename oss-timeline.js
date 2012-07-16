@@ -4,8 +4,11 @@
 
 SimileAjax.History.enabled = false;
 var gEventSource;
-var EVENT_FEED_URL = "http://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values?alt=json-in-script&callback=loadEventsWorksheetJSON";
-var PROJECT_FEED_URL = "http://spreadsheets.google.com/feeds/list/0AlXDdNQEU-8fdDI0OFJEVXRYNGhDNVRrVDhUS19LVVE/3/public/values?alt=json-in-script&callback=loadProjectsWorksheetJSON";
+// var EVENT_FEED_URL = "http://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values?alt=json-in-script&callback=loadEventsWorksheetJSON";
+// var PROJECT_FEED_URL = "http://spreadsheets.google.com/feeds/list/0AlXDdNQEU-8fdDI0OFJEVXRYNGhDNVRrVDhUS19LVVE/3/public/values?alt=json-in-script&callback=loadProjectsWorksheetJSON";
+
+var EVENT_FEED_URL = "archive/us-govt-oss-events.json";
+var PROJECT_FEED_URL = "archive/gov-oss-released-projects.json";
 
 function loadProjectsWorksheetJSON(json) {
   var entries = json.feed.entry;
