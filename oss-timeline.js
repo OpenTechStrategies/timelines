@@ -4,8 +4,9 @@
 
 SimileAjax.History.enabled = false;
 var gEventSource;
-var EVENT_FEED_URL = "http://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values?alt=json-in-script&callback=loadEventsWorksheetJSON";
-var PROJECT_FEED_URL = "http://spreadsheets.google.com/feeds/list/0AlXDdNQEU-8fdDI0OFJEVXRYNGhDNVRrVDhUS19LVVE/3/public/values?alt=json-in-script&callback=loadProjectsWorksheetJSON";
+
+var EVENT_FEED_URL;
+var PROJECT_FEED_URL;
 
 function loadProjectsWorksheetJSON(json) {
   var entries = json.feed.entry;
@@ -105,22 +106,22 @@ function loadEventsWorksheetJSON(json) {
     var icon = null;
 
     // Now determine how the event will appear
-    if (status.match(/Highlight/i)) {
-       classname = 'highlight';
-       image = "highlight.png";
-       icon = "highlight-icon.png";
-    }
-    else if (type.match(/Policy/i)) {
-       classname = 'policy';
+    if (type.match(/Policy/i)) {
+       classname = classname + ' policy';
        image = "book.png";
        icon = "book-icon.png";
     }
     else if (type.match(/Publication/g)) {
-       classname = 'publication';
+       classname = classname + ' publication';
        image = "lightbulb.png";
        icon = "lightbulb-icon.png";
     }
 
+    if (status.match(/Highlight/i)) {
+       classname = classname + ' highlight';
+       image = "highlight.png";
+       icon = "highlight-icon.png";
+    }
 
     var event = new Timeline.DefaultEventSource.Event({
       text: title,
@@ -164,12 +165,39 @@ function convertFromGDataDate(/*string<YYYY-MM-DD>*/ date) {
   return newDate;
 }
 
+function getQueryString() {
+    query_string = window.location.search.substr(1).split('&');
+    if (query_string == "") return {};
+    var results = {};
+    for (var i = 0; i < query_string.length; ++i)
+    {
+        var param=query_string[i].split('=');
+        if (param.length != 2) continue;
+        results[param[0]] = decodeURIComponent(param[1].replace(/\+/g, " "));
+    }
+    return results;;
+}
+
 function onLoad() {
   gEventSource = new Timeline.DefaultEventSource();
 
   var theme = Timeline.ClassicTheme.create();
   theme.event.bubble.width = 400;
   theme.event.bubble.height = 200;
+
+  /*
+   * now decide if we're in super-secret offline mode or not. 
+   * if you're using chrome, you'll need to start with the --allow-file-access-from-files argument.
+   */
+  var query_string = getQueryString();
+  if (query_string['offline']) {
+    EVENT_FEED_URL = "archive/us-govt-oss-events.json";
+    PROJECT_FEED_URL = "archive/gov-oss-released-projects.json";
+  }
+  else {
+    EVENT_FEED_URL = "http://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values?alt=json-in-script&callback=loadEventsWorksheetJSON";
+    PROJECT_FEED_URL = "http://spreadsheets.google.com/feeds/list/0AlXDdNQEU-8fdDI0OFJEVXRYNGhDNVRrVDhUS19LVVE/3/public/values?alt=json-in-script&callback=loadProjectsWorksheetJSON";
+  }
 
   var startTime = new Date(((new Date).getTime()) * 24 * 60 * 60 *
 1000);

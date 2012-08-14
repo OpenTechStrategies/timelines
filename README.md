@@ -10,6 +10,7 @@ Materials:
     oss-timeline.js          -- Custom JavaScript for timeline.
     us-govt-open-source.odp  -- Presentation slides.
     archive/                 -- Backups of some source materials.
+    Overpass-fonts/          -- Copies of the Overpass font, used in the presentation.
 
 To host the timeline (not that you really need to, since it's already
 online at http://gov-oss.org), you'd want the Simile Timeline widget code:
