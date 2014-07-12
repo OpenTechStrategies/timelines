@@ -5,25 +5,33 @@
 SimileAjax.History.enabled = false;
 var gEventSource;
 
-var EVENT_FEED_URL;
-var PROJECT_FEED_URL;
+var SHEET_AS_JSON_URL = 'https://script.google.com/macros/s/AKfycbzh43ijzVB3FheF5rSrM7vh4PXzJu2WokOCIpFao_17fBLfD4Nu/exec?';
+
+var EVENT_SPREADSHEET_KEY = '0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E';
+var EVENT_SHEET_NAME = 'Published';
+
+var PROJECT_SPREADSHEET_KEY = '1-z0AiiGbiW8aCcXjupeHVoH_g5LadO2K2dmyIIPuaRY';
+var PROJECT_SHEET_NAME = 'gov-oss.org';
+
+var EVENT_FEED_URL = SHEET_AS_JSON_URL + 'id=' + EVENT_SPREADSHEET_KEY + '&sheet=' + EVENT_SHEET_NAME;
+var PROJECT_FEED_URL = SHEET_AS_JSON_URL + 'id=' + PROJECT_SPREADSHEET_KEY + '&sheet=' + PROJECT_SHEET_NAME;
 
 function loadProjectsWorksheetJSON(json) {
-  var entries = json.feed.entry;
+  var entries = json["gov-oss.org"];
   var timelinerEntries = [];
   for (var i = 0; i < entries.length; ++i) {
     var entry = entries[i];
 
     // these values come from the spreadsheet
-    var projectName = entry.gsx$projectnameacronym.$t;
-    var jurisdiction = entry.gsx$jurisdictionlevel.$t;
-    var organization = entry.gsx$orgdepartment.$t;
-    var license = entry.gsx$osslicenses.$t;
-    var url = entry.gsx$url.$t;
-    var dateAdded = convertFromGDataDate(entry.gsx$dateadded.$t);
-    var releaseDate= convertFromGDataDate(entry.gsx$releasedate.$t);
-    var whatItDoes = entry.gsx$whatitdoes.$t;
-    var notes = entry.gsx$notes.$t;
+    var projectName = entry["Project_Name/Acronym"];
+    var jurisdiction = entry["Jurisdiction_Level"];
+    var organization = entry["Org/Department"];
+    var license = entry["OSS_License(s)"];
+    var url = entry["URL"];
+    var dateAdded = convertFromGDataDate(entry["Date_Added"]);
+    var releaseDate = convertFromGDataDate(entry["Release_Date"]);
+    var whatItDoes = entry["What_it_does"];
+    var notes = entry["Notes"];
 
     // these values we set based on the spreadsheet values
     var color = null;
@@ -54,6 +62,7 @@ function loadProjectsWorksheetJSON(json) {
        description = description + '<p><b>Notes</b><br />' + notes + '</p>';
 
     var event = new Timeline.DefaultEventSource.Event({
+      title: projectName,
       text: projectName,
       description: description,
       classname: classname,
@@ -75,29 +84,18 @@ function loadProjectsWorksheetJSON(json) {
 }
 
 function loadEventsWorksheetJSON(json) {
-  var entries = json.feed.entry;
+  var entries = json.Published;
   var timelinerEntries = [];
   for (var i = 0; i < entries.length; ++i) {
     var entry = entries[i];
 
-    /*
-     * Really unhappy with how these variables are referenced, but can't see an
-     * alternative given the JSON that Google's given me. The field names 
-     * ("gsx$_chk2m") come from the JSON file:
-     *
-     * https://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values?alt=json-in-script&callback=loadEventsWorksheetJSON
-     *
-     * That URL fetches sheet 2 ("/2/") of the spreadsheet ("0Ajxn0...Jb1E").
-     * 
-     */
-    
     // these values come from the spreadsheet
-    var start = convertFromGDataDate(entry.gsx$_cn6ca.$t);
-    var title = entry.gsx$_cokwr.$t;
-    var description = entry.gsx$_cpzh4.$t;
-    var type = entry.gsx$_chk2m.$t;
-    var link = entry.gsx$_cre1l.$t;
-    var status = entry.gsx$_ckd7g.$t;
+    var start = convertFromGDataDate(entry.start);
+    var title = entry.title;
+    var description = entry.description;
+    var type = entry.type;
+    var link = entry.link;
+    var status = entry.status;
 
     // these values we set based on the spreadsheet values
     var classname = null;
@@ -194,10 +192,6 @@ function onLoad() {
     EVENT_FEED_URL = "archive/us-govt-oss-events.json";
     PROJECT_FEED_URL = "archive/gov-oss-released-projects.json";
   }
-  else {
-    EVENT_FEED_URL = "http://spreadsheets.google.com/feeds/list/0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E/2/public/values?alt=json-in-script&callback=loadEventsWorksheetJSON";
-    PROJECT_FEED_URL = "http://spreadsheets.google.com/feeds/list/0AlXDdNQEU-8fdDI0OFJEVXRYNGhDNVRrVDhUS19LVVE/3/public/values?alt=json-in-script&callback=loadProjectsWorksheetJSON";
-  }
 
   var startTime = new Date(((new Date).getTime()) * 24 * 60 * 60 *
 1000);
@@ -235,15 +229,10 @@ function onLoad() {
 
   tl = Timeline.create(document.getElementById("my-timeline"), bandInfos);
 
-  // Create a script that will feed the timeline data to our loadEventsWorksheetJSON
-  var scriptTag = document.createElement('script');
-  scriptTag.src = EVENT_FEED_URL;
-  document.body.appendChild(scriptTag);
+  // feed the timeline data to our JSON eaters
+  $.getJSON(EVENT_FEED_URL, loadEventsWorksheetJSON);
+  $.getJSON(PROJECT_FEED_URL, loadProjectsWorksheetJSON);
 
-  // Create a script that will feed the code release data to our loadProjectsWorksheetJSON
-  scriptTag = document.createElement('script');
-  scriptTag.src = PROJECT_FEED_URL;;
-  document.body.appendChild(scriptTag);
 }
 
 var resizeTimerID = null;
