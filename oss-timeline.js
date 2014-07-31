@@ -92,7 +92,7 @@ function loadEventsWorksheetJSON(json) {
     // these values come from the spreadsheet
     var start = convertFromGDataDate(entry.start);
     var title = entry.title;
-    var description = entry.description;
+    var description = entry.headline;
     var type = entry.type;
     var link = entry.link;
     var status = entry.status;
