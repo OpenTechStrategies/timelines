@@ -7,14 +7,13 @@ var gEventSource;
 
 var SHEET_AS_JSON_URL = 'https://script.google.com/macros/s/AKfycbzh43ijzVB3FheF5rSrM7vh4PXzJu2WokOCIpFao_17fBLfD4Nu/exec?';
 
-var EVENT_SPREADSHEET_KEY = '0AjxnOozsvYvldHY1NE1MV0pGVXRyd2hUaTAzdmRJb1E';
+var EVENT_SPREADSHEET_KEY = '10ypjj1ofXYTtshH96qwyS9XvRNDDyvrwaCJSKjewiYQ';
 var EVENT_SHEET_NAME = 'Published';
 
 var PROJECT_SPREADSHEET_KEY = '1-z0AiiGbiW8aCcXjupeHVoH_g5LadO2K2dmyIIPuaRY';
 var PROJECT_SHEET_NAME = 'gov-oss.org';
 
 var EVENT_FEED_URL = SHEET_AS_JSON_URL + 'id=' + EVENT_SPREADSHEET_KEY + '&sheet=' + EVENT_SHEET_NAME;
-var PROJECT_FEED_URL = SHEET_AS_JSON_URL + 'id=' + PROJECT_SPREADSHEET_KEY + '&sheet=' + PROJECT_SHEET_NAME;
 
 function loadProjectsWorksheetJSON(json) {
   var entries = json["gov-oss.org"];
@@ -200,7 +199,7 @@ function onLoad() {
     Timeline.createHotZoneBandInfo({
         zones: [
             {   start:    "Jan 01 2009 00:00:00 GMT-0500",
-                end:      "Jan 01 2013 00:00:00 GMT-0500",
+                end:      "Jan 01 2017 00:00:00 GMT-0500",
                 magnify:  5,
                 unit:     Timeline.DateTime.MONTH
             },
@@ -231,7 +230,6 @@ function onLoad() {
 
   // feed the timeline data to our JSON eaters
   $.getJSON(EVENT_FEED_URL, loadEventsWorksheetJSON);
-  $.getJSON(PROJECT_FEED_URL, loadProjectsWorksheetJSON);
 
 }
 
