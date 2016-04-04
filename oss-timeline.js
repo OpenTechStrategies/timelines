@@ -192,14 +192,12 @@ function onLoad() {
     PROJECT_FEED_URL = "archive/gov-oss-released-projects.json";
   }
 
-  var startTime = new Date(((new Date).getTime()) * 24 * 60 * 60 *
-1000);
 
   var bandInfos = [
     Timeline.createHotZoneBandInfo({
         zones: [
-            {   start:    "Jan 01 2009 00:00:00 GMT-0500",
-                end:      "Jan 01 2017 00:00:00 GMT-0500",
+            {   start:    "Jan 01 2010 00:00:00 GMT-0500",
+                end:      "Jan 01 2010 00:00:00 GMT-0500",
                 magnify:  5,
                 unit:     Timeline.DateTime.MONTH
             },
