@@ -26,3 +26,6 @@ Analytics tracker in the footer of the HTML file. That will (presumably) help
 us understand where the code is being used. If you don't like it, feel free
 to delete it!
 
+
+Note that Google Docs used as a source for this page must be available
+publicly, or else you will get a CORS error.
