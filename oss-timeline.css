@@ -4,28 +4,32 @@ body {
 */
 }
 
-.highlight {
-   font-style: bold;
-   font-size: medium;
-}
-
-.policy {
+.people {
    /* dark blue */
    color: #0066CC;
 }
 
-.project {
+.coderelease {
    /* gray */
    color: #a0a0a0;
 }
 
-.event {
+.commercial {
    /* black */
    color: black; 
 }
 
-.publication {
+.event {
    /* green */
    color: green;
 }
 
+.partner {
+   /* purple */
+   color: #9B30FF;
+   font-size: medium;
+}
+
+.othertype {
+   font-style: bold;
+}
