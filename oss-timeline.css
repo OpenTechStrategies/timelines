@@ -15,8 +15,8 @@ body {
 }
 
 .commercial {
-   /* red */
-   color: red; 
+   /* black */
+   color: black; 
 }
 
 .event {
@@ -31,5 +31,5 @@ body {
 }
 
 .othertype {
-   font-style: bold;
+   font-style: italic;
 }
