@@ -25,7 +25,7 @@
 <div class="hero-unit">
 
    <h1 id="page_title">GeoNode</h3>
-   <p>This is a timeline of the major events, publications, and code releases in the history of the GeoNode project.</p>
+   <p>This is a timeline of the major events, publications, and code releases in the history of the GeoNode project.  To view dates that are earlier or later than the visible span of time, drag the timeline left or right.  To view more information about an entry, click on its title and a pop-up will appear.</p>
 
 
    <!-- the timeline itself -->

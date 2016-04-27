@@ -1,0 +1,5 @@
+DirectoryIndex geonode-timeline
+
+<FilesMatch "^(geonode-timeline)$">
+  ForceType 'text/html; charset=UTF-8'
+</FilesMatch>
