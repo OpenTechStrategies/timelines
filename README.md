@@ -1,3 +1,9 @@
+Code to make timelines from Google Spreadsheets.  For each timeline,
+we've added a separate branch with different titles, sources, and
+styling, but the baseline material is the same.  You probably want to
+use the master branch as the basis for your work.  Master was
+originally:
+
 Presentation and accompanying materials for OSCON 2012 presentation
 "US Government v. Open Source: A History and Lessons Learned", with
 Gunnar Hellekson (Red Hat) and Karl Fogel (Open Tech Strategies).
