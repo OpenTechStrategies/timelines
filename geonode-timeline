@@ -54,7 +54,7 @@ This page feeds the
 <a href="https://docs.google.com/spreadsheets/d/10ypjj1ofXYTtshH96qwyS9XvRNDDyvrwaCJSKjewiYQ/edit#gid=8">GeoNode Timeline Spreadsheet</a> 
 into a <a href="http://simile.mit.edu/timeline/">Simile Timeline widget</a>. 
 It is based on the work of <a href="http://kiyo.wordpress.com/2007/04/29/google-spreadsheet-json-to-timeline/">Kiyohito Yamamoto</a>.
-You can find the source for this at <a href="https://github.com/OpenTechStrategies/us-govt-open-source">GitHub</a>
+You can find the source for this at <a href="https://github.com/OpenTechStrategies/timelines">GitHub</a>
 </p>
 </div>
 
