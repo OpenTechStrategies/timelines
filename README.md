@@ -5,9 +5,9 @@ To use this tree, we recommend creating a new branch based on the
 at the `us-govt-oss` branch and the `ots-geonode` branches for
 examples of typical customizations.  The baseline materials are:
 
-    timeline                 -- The timeline page one browses to.
-    timeline.js              -- Custom JavaScript for timeline.
-    .htaccess                -- If you rename `timeline`, adjust here too.
+    timeline                 -- The timeline page one browses to
+    timeline.js              -- Custom JavaScript for timeline
+    .htaccess                -- If you rename `timeline`, adjust here too
     SheetAsJSON.gs           -- Convert Spreadsheets->JSON via Google App Engine
 
 You'll also need the Simile Timeline widget code:
