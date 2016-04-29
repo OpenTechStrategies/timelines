@@ -1,34 +1,33 @@
-Code to make timelines from Google Spreadsheets.  For each timeline,
-we've added a separate branch with different titles, sources, and
-styling, but the baseline material is the same.  You probably want to
-use the master branch as the basis for your work.  Master was
-originally:
+Template for displaying timelines based on Google Spreadsheets.
 
-Presentation and accompanying materials for OSCON 2012 presentation
-"US Government v. Open Source: A History and Lessons Learned", with
-Gunnar Hellekson (Red Hat) and Karl Fogel (Open Tech Strategies).
+To use this tree, we recommend creating a new branch based on the
+`master` branch and then customizing as needed.  You can take a look
+at the `us-govt-oss` branch and the `ots-geonode` branches for
+examples of typical customizations.  The baseline materials are:
 
-See http://www.oscon.com/oscon2012/public/schedule/detail/24221.
+    timeline                 -- The timeline page one browses to.
+    timeline.js              -- Custom JavaScript for timeline.
+    .htaccess                -- If you rename `timeline`, adjust here too.
+    SheetAsJSON.gs           -- Convert Spreadsheets->JSON via Google App Engine
 
-Materials:
-
-    oss-timeline.html        -- The timeline page one browses to.
-    oss-timeline.js          -- Custom JavaScript for timeline.
-    SheetAsJSON.gs           -- Google App Engine to convert Spreadsheets to JSON
-    us-govt-open-source.odp  -- Presentation slides.
-    archive/                 -- Backups of some source materials.
-    Overpass-fonts/          -- Copies of the Overpass font, used in the presentation.
-
-To host the timeline (not that you really need to, since it's already
-online at http://gov-oss.org), you'd want the Simile Timeline widget code:
+You'll also need the Simile Timeline widget code:
 
     http://www.simile-widgets.org/timeline/
 
 which provides the "simile-ajax-api.js" and "timeline-api.js" files
 (referenced from the HTML headers), and the files + images they load.
 
-If you do host this yourself, you should note that we've included a Google
-Analytics tracker in the footer of the HTML file. That will (presumably) help
-us understand where the code is being used. If you don't like it, feel free
-to delete it!
+This project originated as a small web site for displaying a
+presentation and accompanying materials for OSCON 2012 presentation
+["US Government v. Open Source: A History and Lessons
+Learned"](http://www.oscon.com/oscon2012/public/schedule/detail/24221),
+with Gunnar Hellekson (Red Hat) and Karl Fogel (Open Tech Strategies).
+The template here still reflects that content, and you should just
+edit the obvious places to customize it for your own needs.  See the
+`us-govt-oss` branch for the original production version.
 
+Web Analytics
+-------------
+
+If you want web analytics, see the Google Analytics and Piwik code
+near the bottom of `oss-timeline.html` on the `us-govt-oss` branch.

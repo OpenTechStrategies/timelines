@@ -1,6 +1,6 @@
 // Copyright (C) 2011-2012  Gunnar Hellekson
 // Licensed under the Creative Commons Attribution-ShareAlike 3.0 License.
-// See the file COPYING for details.
+// See the file LICENSE for details.
 
 SimileAjax.History.enabled = false;
 var gEventSource;

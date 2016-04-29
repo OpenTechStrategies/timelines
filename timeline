@@ -1,11 +1,11 @@
 <!-- Copyright (C) 2011-2012  Gunnar Hellekson
      Licensed under the Creative Commons Attribution-ShareAlike 3.0 License.
-     See the file COPYING for details. -->
+     See the file LICENSE for details. -->
 
 <html>
 <head>
   <title>Timeline: Open Source in the US Government</title>
-  <link rel="stylesheet" type="text/css" href="oss-timeline.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="timeline.css" media="all" />
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" media="all" />
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css" media="all" />
   <script src="http://www.simile-widgets.org/timeline/api/timeline-api.js" type="text/javascript"></script>
@@ -87,29 +87,11 @@ This work is licensed under a Creative Commons Attribution-Share Alike 3.0 Licen
 
 </div> <!-- container -->
 
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-9623454-1");
-pageTracker._initData();
-pageTracker._trackPageview();
-</script>
+<!-- TODO: We should either add subresource integrity attributes here, 
+     or else use a local copy of jquery like we do with bootstrap. -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.js" type="text/javascript"></script>
-<script src="oss-timeline.js" type="text/javascript"></script>
-<script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://atechnologyjobisnoexcuse.com/analytics/" : "http://atechnologyjobisnoexcuse.com/analytics/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 6);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
-</script><noscript><p><img src="http://atechnologyjobisnoexcuse.com/analytics/piwik.php?idsite=6" style="border:0" alt="" /></p></noscript>
+<script src="timeline.js" type="text/javascript"></script>
 </body>
 </html>
 
