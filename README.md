@@ -5,16 +5,12 @@ To use this tree, we recommend creating a new branch based on the
 at the `us-govt-oss` branch and the `ots-geonode` branches for
 examples of typical customizations.  The baseline materials are:
 
-    timeline                 -- The timeline page one browses to
-    timeline.js              -- Custom JavaScript for timeline
-    .htaccess                -- If you rename `timeline`, adjust here too
-    SheetAsJSON.gs           -- Convert Spreadsheets->JSON via Google App Engine
+    timeline        --  The timeline page one browses to
+    timeline.js     --  Custom JavaScript for timeline
+    .htaccess       --  If you rename `timeline`, adjust here too
+    SheetAsJSON.gs  --  Google App Script to convert Spreadsheets->JSON
 
-You'll also need the Simile Timeline widget code:
-
-    http://www.simile-widgets.org/timeline/
-
-which provides the "simile-ajax-api.js" and "timeline-api.js" files
+You'll also need the [Simile Timeline widget](http://www.simile-widgets.org/timeline/) code, which provides the `simile-ajax-api.js` and `timeline-api.js` files
 (referenced from the HTML headers), and the files + images they load.
 
 This project originated as a small web site for displaying a
