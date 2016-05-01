@@ -11,7 +11,7 @@ var EVENT_SPREADSHEET_KEY = '10ypjj1ofXYTtshH96qwyS9XvRNDDyvrwaCJSKjewiYQ';
 var EVENT_SHEET_NAME = 'Published';
 
 var PROJECT_SPREADSHEET_KEY = '1-z0AiiGbiW8aCcXjupeHVoH_g5LadO2K2dmyIIPuaRY';
-var PROJECT_SHEET_NAME = 'gov-oss.org';
+var PROJECT_SHEET_NAME = 'clients.opentechstrategies.com/worldbank/geonode-timeline';
 
 var EVENT_FEED_URL = SHEET_AS_JSON_URL + 'id=' + EVENT_SPREADSHEET_KEY + '&sheet=' + EVENT_SHEET_NAME;
 
