@@ -200,9 +200,9 @@ function onLoad() {
     Timeline.createHotZoneBandInfo({
         zones: [
             {   start:    "Jan 01 2010 00:00:00 GMT-0500",
-                end:      "Jan 01 2010 00:00:00 GMT-0500",
-                magnify:  5,
-                unit:     Timeline.DateTime.MONTH
+                end:      "Jan 01 2016 00:00:00 GMT-0500",
+                magnify:  3,
+                unit:     Timeline.DateTime.YEAR
             },
         ],
         eventSource:    gEventSource,
