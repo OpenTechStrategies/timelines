@@ -88,13 +88,14 @@ function loadEventsWorksheetJSON(json) {
   for (var i = 0; i < entries.length; ++i) {
     var entry = entries[i];
 
+    if (entry.status != "visible") continue;
+
     // these values come from the spreadsheet
     var start = convertFromGDataDate(entry.start);
     var title = entry.title;
     var description = entry.headline;
     var type = entry.type;
     var link = entry.link;
-    var status = entry.status;
 
     // these values we set based on the spreadsheet values
     var classname = null;
