@@ -107,8 +107,8 @@ function loadEventsWorksheetJSON(json) {
     if (type.match(/People/i)) {
        classname = classname + ' people';
     }
-    else if (type.match(/Code Release/g)) {
-       classname = classname + ' coderelease';
+    else if (type.match(/Code/g)) {
+       classname = classname + ' code-event';
 
     }
     else if (type.match(/Commercial/i)) {
