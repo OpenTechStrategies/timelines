@@ -22,8 +22,11 @@ The template here still reflects that content, and you should just
 edit the obvious places to customize it for your own needs.  See the
 `us-govt-oss` branch for the original production version.
 
-Web Analytics
--------------
-
 If you want web analytics, see the Google Analytics and Piwik code
 near the bottom of `oss-timeline.html` on the `us-govt-oss` branch.
+
+Other Similar Software
+----------------------
+
+See also [TimelineJS3](https://github.com/NUKnightLab/TimelineJS3), which
+powers knightlab's [Timeline](https://timeline.knightlab.com/) SaaS site.
